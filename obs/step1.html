@@ -3,13 +3,125 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Step 1</title>
+    <title>Создание записи - Шаг 1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
     <nav id="nav" class="navbar bg-light navbar-light"></nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/js/loadNavbar.js"></script>
+    <div class="container-fluid">
+        <form>
+            <div class="row my-2">
+                <div class="col">
+                    <label for="datetime">Дата и время начала наблюдения:</label>
+                    <div id="datetime">
+                        <select id="daySelect">
+                            <option>--</option>
+                        </select>
+                        <select id="monthSelect">
+                            <option>--</option>
+                        </select>                
+                        <select id="yearSelect">
+                            <option>--</option>
+                        </select> 
+                        <select id="hourSelect">
+                            <option>--</option>
+                        </select>                  
+                        <select id="minuteSelect">
+                            <option>--</option>
+                        </select>                  
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="duration">Продолжительность</label>
+                    <div id="duration">
+                        <input type="text" id="duration">
+                    </div>
+                </div>
+            </div>    
+
+            <div class="row my-2">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="locationSelect">Место наблюдения</label>
+                        <select id="locationSelect" class="form-control">
+                            <option>--</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="distance">Пройденная дистанция</label>
+                        <input type="text" id="distance" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="terrainSelect">Биотоп</label>
+                        <select id="terrainSelect" class="form-control">
+                            <option value="">Выбрать</option>
+                            <option value="forest">Лес</option>
+                            <option value="lake">Озеро</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="map" class="col">
+                </div>
+            </div>
+
+            <div class="row my-2">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="weatherSelect">Погодные условия</label>
+                        <select id="weatherSelect" class="form-control">
+                            <option value="">Выбрать</option>
+                            <option value="clear">Ясно</option>
+                            <option value="rain">Дождь</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="eventOptions">Наблюдение для события?</label>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="eventOptions" id="eventNo" checked>
+                            <label class="form-check-label" for="eventNo">Нет</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="eventOptions" id="eventYes">
+                            <label class="form-check-label" for="eventYes">Да</label>
+                        </div>     
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my-2">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="observerCount">Количество наблюдателей</label>
+                        <input type="number" id="observerCount" class="form-control" min="1" value="1">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="eventSelect">Укажите событие:</label>
+                            <select id="eventSelect" class="form-control" disabled>
+                             <option value="">Выбрать</option>
+                         </select>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <div class="row my-2">
+            <div class="col-11"></div>
+            <div class="col-1">
+                <button id="toNextStep" class="btn btn-primary">Далее</button>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/loadNavbar.js"></script>
+<script type="text/javascript" src="/js/step1.js"></script>
 </body>
 </html>
