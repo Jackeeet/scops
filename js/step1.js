@@ -56,12 +56,14 @@ function checkDisableDates() {
     disableDates(dateCountToDisable);
 }
 
-function disableDates(dateCount) { // this could be refactored as well
-    let i = 0;
+function disableDates(dateCount) {
     let date = 31;
-    for (i; i < dateCount; i++) {
-        daySelect.options[31 - i].disabled = true;
-        date--;
+    let maxEnabledDate = date - dateCount;
+    for (date; date > maxEnabledDate; date--) {
+        daySelect.options[date].disabled = true;
+        if (daySelect.value == daySelect.options[date].value) {
+            daySelect.value = "0";
+        }
     }
     while (date > 28){
         daySelect.options[date].disabled = false;
@@ -71,11 +73,11 @@ function disableDates(dateCount) { // this could be refactored as well
 
 function isFullMonth(monthValue) {
     return (monthValue < 8 && monthValue % 2 == 1) || 
-           (monthValue >= 8 && monthValue % 2 == 0);
+    (monthValue >= 8 && monthValue % 2 == 0);
 }
 
 function isLeapYear(year) {
-   return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+    return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 }
 
 const daySelect = document.getElementById('daySelect');

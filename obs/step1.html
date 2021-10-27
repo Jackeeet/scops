@@ -9,26 +9,26 @@
 <body>
     <nav id="nav" class="navbar bg-light navbar-light"></nav>
 
-    <div class="container-fluid">
+    <div class="container-xl bg-light">
         <form>
             <div class="row my-2">
                 <div class="col">
                     <label for="datetime">Дата и время начала наблюдения:</label>
                     <div id="datetime">
                         <select id="daySelect">
-                            <option>--</option>
+                            <option value="0">--</option>
                         </select>
                         <select id="monthSelect">
-                            <option>--</option>
+                            <option value="0">--</option>
                         </select>                
                         <select id="yearSelect">
-                            <option>--</option>
+                            <option value="0">--</option>
                         </select> 
                         <select id="hourSelect">
-                            <option>--</option>
+                            <option value="0">--</option>
                         </select>                  
                         <select id="minuteSelect">
-                            <option>--</option>
+                            <option value="0">--</option>
                         </select>                  
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     <div class="form-group">
                         <label for="locationSelect">Место наблюдения</label>
                         <select id="locationSelect" class="form-control">
-                            <option>--</option>
+                            <option value="0">--</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -55,7 +55,7 @@
                     <div class="form-group">
                         <label for="terrainSelect">Биотоп</label>
                         <select id="terrainSelect" class="form-control">
-                            <option value="">Выбрать</option>
+                            <option value="0">Выбрать</option>
                             <option value="forest">Лес</option>
                             <option value="lake">Озеро</option>
                         </select>
@@ -70,7 +70,7 @@
                     <div class="form-group">
                         <label for="weatherSelect">Погодные условия</label>
                         <select id="weatherSelect" class="form-control">
-                            <option value="">Выбрать</option>
+                            <option value="0">Выбрать</option>
                             <option value="clear">Ясно</option>
                             <option value="rain">Дождь</option>
                         </select>
@@ -103,7 +103,7 @@
                         <div class="form-group">
                             <label for="eventSelect">Укажите событие:</label>
                             <select id="eventSelect" class="form-control" disabled>
-                             <option value="">Выбрать</option>
+                             <option value="0">Выбрать</option>
                          </select>
                      </div>
                  </div>
@@ -113,7 +113,7 @@
          <div class="row my-2">
             <div class="col-11"></div>
             <div class="col-1">
-                <button id="toNextStep" class="btn btn-primary">Далее</button>
+                <button type="submit" id="toNextStep" class="btn btn-primary">Далее</button>
             </div>
         </div>
     </div>
