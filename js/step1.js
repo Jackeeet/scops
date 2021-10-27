@@ -15,16 +15,10 @@ function toTwoOrMoreDigits(num){
 }
 
 function fillDateTimeSelects() {
-    let daySelect = document.getElementById('daySelect');
     fillNums(daySelect, 1, 31);
-
-    let hourSelect = document.getElementById('hourSelect');
     fillNums(hourSelect, 0, 23);
-
-    let minuteSelect = document.getElementById('minuteSelect');
     fillNums(minuteSelect, 0, 59);
 
-    let monthSelect = document.getElementById('monthSelect');
     let monthValue = 1;
     monthNames.forEach(name => {
         let opt = document.createElement('option');
@@ -33,15 +27,61 @@ function fillDateTimeSelects() {
         monthValue++;
         monthSelect.appendChild(opt);
     });
+    monthSelect.addEventListener('change', checkDisableDates);
 
-    let yearSelect = document.getElementById('yearSelect');
     let year = new Date().getFullYear();
     for (let i = year; i >= year - 20; i--) {
         let opt = document.createElement('option');
         opt.innerHTML = i;
         opt.value = i;
         yearSelect.appendChild(opt);
-    }    
+    }
+    yearSelect.addEventListener('change', checkDisableDates);    
 }
+
+function checkDisableDates() {
+    let monthValue = parseInt(monthSelect.value);
+    if (isNaN(monthValue)) {
+        return;
+    }
+
+    let dateCountToDisable = 0;
+    if (monthValue === 2) {
+        let yearValue = parseInt(yearSelect.value);
+        dateCountToDisable = isLeapYear(yearValue)? 2 : 3;
+    } else {
+        dateCountToDisable = isFullMonth(monthValue)? 0 : 1;
+    } 
+
+    disableDates(dateCountToDisable);
+}
+
+function disableDates(dateCount) { // this could be refactored as well
+    let i = 0;
+    let date = 31;
+    for (i; i < dateCount; i++) {
+        daySelect.options[31 - i].disabled = true;
+        date--;
+    }
+    while (date > 28){
+        daySelect.options[date].disabled = false;
+        date--;
+    }
+}
+
+function isFullMonth(monthValue) {
+    return (monthValue < 8 && monthValue % 2 == 1) || 
+           (monthValue >= 8 && monthValue % 2 == 0);
+}
+
+function isLeapYear(year) {
+   return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+}
+
+const daySelect = document.getElementById('daySelect');
+const monthSelect = document.getElementById('monthSelect');
+const yearSelect = document.getElementById('yearSelect');
+const hourSelect = document.getElementById('hourSelect');
+const minuteSelect = document.getElementById('minuteSelect');
 
 fillDateTimeSelects();
