@@ -2,9 +2,40 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Вход</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
+    <nav id="nav" class="navbar bg-light navbar-light"></nav>
 
+    <div class="container-xl bg-light">
+        <div class="row">
+            <div class="col">
+                <form>
+                    <div class="form-group">
+                        <label for="loginBox">Логин</label>
+                        <input type="text" class="form-control" id="loginBox">
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordBox">Пароль</label>
+                        <input type="password" class="form-control" id="passwordBox">
+                    </div>
+                    <button type="submit" id="bodyLoginButton" class="btn btn-primary my-2">Войти</button>
+                </form>    
+            </div>
+            <div class="col">
+                <label for="bodyRegisterButton">Нет учетной записи?</label>
+                <div>
+                    <button type="button" id="bodyRegisterButton" class="btn btn-secondary my-2">Зарегистрироваться</button>    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/loadNavbar.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
 </body>
 </html>

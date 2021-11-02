@@ -14,16 +14,18 @@ function createLink(linkData, className, container){
 }
 
 function createButtons(buttonContainer) {
-    let register = document.createElement('button');
+    register = document.createElement('button');
     register.type = 'button';
     register.classList.add('btn', 'btn-warning');
     register.innerHTML = 'Регистрация';
+    register.setAttribute('id', 'registerButton');
     buttonContainer.appendChild(register);
 
-    let login = document.createElement('button');
+    login = document.createElement('button');
     login.type = 'button';
     login.classList.add('btn', 'me-2');
     login.innerHTML = 'Вход';
+    login.setAttribute('id', 'loginButton');
     buttonContainer.appendChild(login);
 }
 
@@ -56,4 +58,7 @@ function fillNavbar(userAuthorised) {
     bar.appendChild(container);
 }
 
+let register, login;
 fillNavbar(false);
+register.onclick = () => location.href = '/usr/register.html';
+login.onclick = () => location.href = '/usr/login.html';
