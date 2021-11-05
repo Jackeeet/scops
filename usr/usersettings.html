@@ -4,16 +4,127 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Настройки профиля</title>
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
     <nav id="nav" class="navbar bg-light navbar-light"></nav>
 
     <div class="container-xl bg-light">
-        
+        <div class="d-flex justify-content-between">
+            <h3>Настройки</h3>
+            <button type="button" class="btn btn-secondary" id="saveButton">Сохранить</button>
+        </div>
+        <hr />
+
+        <div class="d-flex justify-content-center">
+            <h3>Профиль</h3>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form>
+                    <div class="form-group">
+                        <label for="surnameBox">Фамилия</label>
+                        <input type="text" class="form-control" id="surnameBox">
+                    </div>
+                    <div class="form-group">
+                        <label for="nameBox">Имя</label>
+                        <input type="text" class="form-control" id="nameBox">
+                    </div>
+                    <div class="form-group">
+                        <label for="patronymBox">Отчество</label>
+                        <input type="text" class="form-control" id="patronymBox">
+                    </div>
+                </form>    
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="loginBox">Логин</label>
+                    <input type="text" class="form-control" id="loginBox">
+                </div>
+                <div class="form-group">
+                    <label for="passwordBox1">Пароль</label>
+                    <input type="password" class="form-control" id="passwordBox1">
+                </div>
+                <div class="form-group">
+                    <label for="passwordBox2">Повторите пароль</label>
+                    <input type="password" class="form-control" id="passwordBox2">
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="d-flex justify-content-center">
+            <h3>Видимость</h3>
+        </div>
+        <div class="row my-1 align-items-center">
+            <div class="col-4">Мои локации видны</div>
+            <div class="col-4">
+                <input type="radio" id="locationVisible" name="location" checked>
+                <label for="locationVisible">всем</label>
+            </div>
+            <div class="col-4">
+                <input type="radio" id="locationHidden" name="location">
+                <label for="locationHidden">только мне</label>
+            </div>
+        </div>
+        <div class="row my-1 align-items-center">
+            <div class="col-4">Мои наблюдения видны</div>
+            <div class="col-4">
+                <input type="radio" id="observationVisible" name="observations" checked>
+                <label for="observationVisible">всем</label>
+            </div>
+            <div class="col-4">
+                <input type="radio" id="observationHidden" name="observations">
+                <label for="observationHidden">только мне</label>
+            </div>
+        </div>
+        <div class="row my-1 align-items-center">
+            <div class="col-4">Мои события видны</div>
+            <div class="col-4">
+                <input type="radio" id="eventVisible" name="events" checked>
+                <label for="eventVisible">всем</label>
+            </div>
+            <div class="col-4">
+                <input type="radio" id="eventHidden" name="events">
+                <label for="eventHidden">только мне</label>
+            </div>
+        </div>
+        <div class="row my-1 align-items-center">
+            <div class="col-4">Мои птицы видны</div>
+            <div class="col-4">
+                <input type="radio" id="birbVisible" name="birbs" checked>
+                <label for="birbVisible">всем</label>
+            </div>
+            <div class="col-4">
+                <input type="radio" id="birbHidden" name="birbs">
+                <label for="birbHidden">только мне</label>
+            </div>
+        </div>
+        <hr />
+
+        <div class="d-flex justify-content-center">
+            <h3>Птицы</h3>
+        </div>
+
+        <div class="row my-1 align-items-center">
+            <div class="col-3">Отображать названия птиц</div>
+            <div class="col-3">
+                <input type="radio" id="birbRu" name="birblang" checked>
+                <label for="birbRu">на русском языке</label>
+            </div>
+            <div class="col-3">
+                <input type="radio" id="birbLat" name="birblang">
+                <label for="birbLat">на латыни</label>
+            </div>
+            <div class="col-3">
+                <input type="radio" id="birbAll" name="birblang">
+                <label for="birbAll">на русском и на латыни</label>
+            </div>
+        </div>
+
     </div>
 
-    <script type="text/javascript" src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="/js/loadNavbar.js"></script>
 </body>
 </html>
