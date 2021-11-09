@@ -1,8 +1,8 @@
 const links = [
-{name: 'Создать', addr:'/obs/step1.html'},
-{name: 'Наблюдения', addr:'/obs/observations.html'},
-{name: 'События', addr:'/evs/events.html'},
-{name: 'Птицы', addr:'/exs/birds.html'}
+{name: 'Создать', addr:'obs/step1.html'},
+{name: 'Наблюдения', addr:'obs/observations.html'},
+{name: 'События', addr:'evs/events.html'},
+{name: 'Птицы', addr:'exs/birds.html'}
 ]
 
 function createLink(linkData, className, container){
@@ -60,5 +60,5 @@ function fillNavbar(userAuthorised) {
 
 let register, login;
 fillNavbar(false);
-register.onclick = () => location.href = '/usr/register.html';
-login.onclick = () => location.href = '/usr/login.html';
+register.onclick = () => location.href = 'usr/register.html';
+login.onclick = () => location.href = 'usr/login.html';

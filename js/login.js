@@ -12,4 +12,4 @@ const loginButton = document.getElementById('bodyLoginButton');
 loginButton.onclick = validate;
 
 const registerButton = document.getElementById('bodyRegisterButton');
-registerButton.onclick = () => location.href = '/usr/register.html';
+registerButton.onclick = () => location.href = 'usr/register.html';

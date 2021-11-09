@@ -7,7 +7,7 @@ function validate() {
 
 function setListeners(){
     registerButton.onclick = validate;
-    loginButton.onclick = () => location.href = '/usr/login.html';
+    loginButton.onclick = () => location.href = 'usr/login.html';
 }
 
 const surnameBox = document.getElementById('surnameBox');
