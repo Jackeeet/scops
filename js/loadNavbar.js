@@ -37,7 +37,8 @@ function fillNavbar(userAuthorised) {
     let linksContainer = document.createElement('div');
     linksContainer.classList.add('d-flex');
 
-    createLink({name:'SCOPS', addr:'/'}, 'navbar-brand', linksContainer);
+    // createLink({name:'SCOPS', addr:'/'}, 'navbar-brand', linksContainer);
+    createLink({name:'SCOPS', addr:''}, 'navbar-brand', linksContainer);
 
     let linkList = document.createElement('ul');
     linkList.classList.add('nav');
